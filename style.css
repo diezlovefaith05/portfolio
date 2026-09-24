@@ -1,26 +1,68 @@
-/* Highlighted Technical Portfolio Note */
-.tech-note {
+/* Contact Icon Buttons Styling */
+.contact-icon-links {
+    display: flex;
+    gap: 1.25rem;
     margin-top: 1.5rem;
-    padding: 1.2rem 1.5rem;
+    align-items: center;
+}
+
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--border-color);
     background-color: var(--bg-card);
-    border-left: 4px solid var(--neon-blue);
-    border-radius: 6px;
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.08);
 }
 
-.tech-note p {
-    color: var(--text-secondary);
-    font-size: 1rem;
-}
-
-.tech-title {
+/* Email Icon */
+.email-btn {
     color: var(--neon-blue);
-    font-weight: 700;
-    margin-right: 0.3rem;
-    text-shadow: 0 0 8px rgba(0, 243, 255, 0.3);
+    border-color: var(--neon-blue);
+}
+.email-btn:hover {
+    background-color: var(--neon-blue);
+    color: var(--bg-main);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+    transform: translateY(-3px);
 }
 
-.tech-note em {
-    color: var(--text-primary);
-    font-style: italic;
+/* LinkedIn Icon */
+.linkedin-btn {
+    color: #0a66c2;
+    border-color: #0a66c2;
+}
+.linkedin-btn:hover {
+    background-color: #0a66c2;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(10, 102, 194, 0.5);
+    transform: translateY(-3px);
+}
+
+/* WhatsApp Icon */
+.whatsapp-btn {
+    color: #25d366;
+    border-color: #25d366;
+}
+.whatsapp-btn:hover {
+    background-color: #25d366;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Viber Icon */
+.viber-btn {
+    color: #7360f2;
+    border-color: #7360f2;
+}
+.viber-btn:hover {
+    background-color: #7360f2;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(115, 96, 242, 0.5);
+    transform: translateY(-3px);
 }
