@@ -66,6 +66,7 @@ header {
 .nav-links {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 1.5rem;
 }
 
@@ -78,6 +79,22 @@ header {
 .nav-links a:hover {
     color: var(--neon-blue);
     text-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+}
+
+/* Nav Download CV Button styling */
+.nav-cv-btn {
+    color: var(--neon-blue) !important;
+    border: 1px solid var(--neon-blue);
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    transition: all 0.3s ease !important;
+}
+
+.nav-cv-btn:hover {
+    background-color: var(--neon-blue);
+    color: var(--bg-main) !important;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
+    text-shadow: none !important;
 }
 
 /* Hero Section */
