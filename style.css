@@ -306,6 +306,22 @@ header {
     color: var(--text-primary);
 }
 
+/* Compact Video Showcase Container */
+.video-wrapper {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.video-wrapper video {
+    width: 100%;
+    max-height: 420px;
+    border-radius: 12px;
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    display: block;
+}
+
 /* Experience Cards */
 .experience-list {
     display: flex;
