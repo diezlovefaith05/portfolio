@@ -326,49 +326,76 @@ header {
 .testimonial-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-left: 4px solid var(--neon-green);
+    border-left: 4px solid var(--neon-blue);
     border-radius: 12px;
-    padding: 2rem;
+    padding: 2.2rem 2.5rem;
     margin-top: 1.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .testimonial-card:hover {
     transform: translateY(-3px);
-    border-color: var(--neon-green);
+    border-color: var(--neon-blue);
 }
 
 .quote-icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--neon-blue);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.8rem;
     opacity: 0.85;
 }
 
 .testimonial-text {
-    font-size: 1.1rem;
+    font-size: 1.12rem;
     font-style: italic;
     color: var(--text-primary);
-    line-height: 1.7;
-    margin-bottom: 1.25rem;
+    line-height: 1.75;
+    margin-bottom: 1.8rem;
 }
 
-.testimonial-author .author-name {
-    font-size: 1.15rem;
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.author-name {
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--neon-blue);
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
 }
 
-.testimonial-author .author-title {
+.author-title {
     font-size: 0.95rem;
     color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.author-org {
+    color: var(--neon-blue);
+    font-weight: 600;
 }
 
 .user-badge {
-    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(0, 255, 102, 0.08);
     color: var(--neon-green);
-    font-style: normal;
+    border: 1px solid rgba(0, 255, 102, 0.25);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 /* Experience Cards */
