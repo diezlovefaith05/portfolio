@@ -1,14 +1,13 @@
-/* Color Palette Variables - Cyber Executive Neon Theme */
+/* Palette Variables - Cyber Executive Neon Theme */
 :root {
-    --bg-main: #070c16;
-    --bg-card: #0d1527;
-    --bg-card-hover: #121c33;
-    --border-color: #1a2744;
-    --neon-blue: #00f3ff;
-    --neon-blue-glow: rgba(0, 243, 255, 0.35);
+    --bg-dark: #070c18;
+    --bg-card: rgba(13, 22, 38, 0.88);
+    --border-neon: #00f3ff;
+    --border-glow: rgba(0, 243, 255, 0.35);
     --neon-green: #00ff66;
     --text-primary: #ffffff;
     --text-secondary: #94a3b8;
+    --text-muted: #64748b;
 }
 
 /* Reset & Base Styles */
@@ -26,8 +25,28 @@ body {
     font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background-color: var(--bg-main);
-    background-image: radial-gradient(circle at 50% 0%, #0d1a33 0%, var(--bg-main) 70%);
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(0, 243, 255, 0.15) 0%, transparent 65%),
+        radial-gradient(circle at 100% 40%, rgba(0, 243, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 0% 70%, rgba(0, 243, 255, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, #070c18 0%, #04070e 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Cyber Ray Overlay FX */
+.bg-glow-ray {
+    position: fixed;
+    top: 30%;
+    left: -20%;
+    width: 140%;
+    height: 300px;
+    background: radial-gradient(ellipse at center, rgba(0, 243, 255, 0.06) 0%, transparent 70%);
+    transform: rotate(-12deg);
+    pointer-events: none;
+    z-index: 0;
 }
 
 a {
@@ -37,13 +56,14 @@ a {
 
 /* Navigation Header */
 header {
-    background: rgba(7, 12, 22, 0.92);
-    border-bottom: 1px solid var(--border-color);
+    background: rgba(7, 12, 24, 0.92);
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 .navbar {
@@ -62,8 +82,8 @@ header {
 }
 
 .accent-text {
-    color: var(--neon-blue);
-    text-shadow: 0 0 10px var(--neon-blue-glow);
+    color: var(--border-neon);
+    text-shadow: 0 0 12px var(--border-glow);
 }
 
 .nav-links {
@@ -76,12 +96,12 @@ header {
 .nav-links a {
     font-weight: 500;
     color: var(--text-secondary);
-    transition: color 0.3s;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--neon-blue);
-    text-shadow: 0 0 8px var(--neon-blue-glow);
+    color: var(--border-neon);
+    text-shadow: 0 0 10px var(--border-glow);
 }
 
 /* Hero Section */
@@ -91,7 +111,8 @@ header {
     justify-content: center;
     align-items: center;
     padding: 7rem 2rem 3rem;
-    background: radial-gradient(circle at 50% 30%, #112244 0%, var(--bg-main) 80%);
+    position: relative;
+    z-index: 1;
 }
 
 .hero-container {
@@ -108,8 +129,8 @@ header {
     height: 210px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--neon-blue);
-    box-shadow: 0 0 25px var(--neon-blue-glow);
+    border: 3px solid var(--border-neon);
+    box-shadow: 0 0 25px var(--border-glow), inset 0 0 15px var(--border-glow);
     flex-shrink: 0;
 }
 
@@ -140,7 +161,7 @@ header {
 .btn {
     display: inline-block;
     padding: 0.75rem 1.25rem;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 600;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
@@ -148,35 +169,38 @@ header {
 }
 
 .btn-primary {
-    background-color: transparent;
-    color: var(--neon-blue);
-    border: 2px solid var(--neon-blue);
-    box-shadow: 0 0 12px rgba(0, 243, 255, 0.2);
+    background-color: rgba(0, 243, 255, 0.05);
+    color: var(--border-neon);
+    border: 2px solid var(--border-neon);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
 }
 
 .btn-primary:hover {
-    background-color: var(--neon-blue);
-    color: var(--bg-main);
-    box-shadow: 0 0 22px rgba(0, 243, 255, 0.5);
+    background-color: var(--border-neon);
+    color: #070c18;
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.6);
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: rgba(0, 255, 102, 0.05);
     color: var(--neon-green);
     border: 2px solid var(--neon-green);
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.15);
 }
 
 .btn-secondary:hover {
     background-color: var(--neon-green);
-    color: var(--bg-main);
-    box-shadow: 0 0 22px rgba(0, 255, 102, 0.5);
+    color: #070c18;
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.6);
 }
 
-/* Section Layout & Title Styling */
+/* Section Layout & Cyber Title Styling */
 .section {
     max-width: 1100px;
     margin: auto;
     padding: 4.5rem 2rem 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .section-title-wrapper {
@@ -192,53 +216,52 @@ header {
     font-weight: 700;
     color: #ffffff;
     display: inline-block;
-    border-bottom: 3px solid var(--neon-blue);
-    padding-bottom: 6px;
-    box-shadow: 0 4px 12px -2px var(--neon-blue-glow);
+    position: relative;
+    padding-bottom: 8px;
+    border-bottom: 3.5px solid var(--border-neon);
+    box-shadow: 0 4px 15px -2px var(--border-glow);
 }
 
-/* General Neon Glow Cards */
-.glow-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 2rem;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
-}
-
-/* Exact Client Feedback Card Matching Image */
-.neon-feedback-card {
-    background: linear-gradient(145deg, #0d162a 0%, #09101f 100%);
-    border: 2px solid var(--neon-blue);
+/* Reusable Cyber Card Styling Matching Image */
+.cyber-card {
+    background: linear-gradient(145deg, rgba(13, 22, 38, 0.92) 0%, rgba(9, 16, 28, 0.95) 100%);
+    border: 1.8px solid var(--border-neon);
     border-radius: 18px;
-    padding: 2.5rem;
-    margin-top: 1rem;
-    box-shadow: 0 0 25px rgba(0, 243, 255, 0.22), inset 0 0 15px rgba(0, 243, 255, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 2.2rem;
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.2), inset 0 0 15px rgba(0, 243, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.neon-feedback-card:hover {
-    transform: translateY(-2px);
+.cyber-card:hover {
+    transform: translateY(-3px);
     box-shadow: 0 0 35px rgba(0, 243, 255, 0.35), inset 0 0 20px rgba(0, 243, 255, 0.08);
 }
 
+/* Exact Feedback Section Formatting Matching Photo */
+.feedback-card {
+    margin-top: 1rem;
+    padding: 2.5rem;
+}
+
 .quote-icon {
-    font-size: 2.2rem;
-    color: var(--neon-blue);
-    text-shadow: 0 0 12px var(--neon-blue);
-    margin-bottom: 1rem;
+    font-size: 2.4rem;
+    color: var(--border-neon);
+    text-shadow: 0 0 15px var(--border-neon);
+    margin-bottom: 1.2rem;
+    line-height: 1;
 }
 
 .feedback-text {
     font-size: 1.08rem;
-    color: #e2e8f0;
+    color: #f1f5f9;
     line-height: 1.7;
     margin-bottom: 1.8rem;
     font-weight: 400;
 }
 
 .feedback-divider {
-    border-top: 1px dotted rgba(255, 255, 255, 0.2);
+    border-top: 1px dotted rgba(255, 255, 255, 0.22);
     margin-bottom: 1.5rem;
 }
 
@@ -268,13 +291,13 @@ header {
     align-items: center;
     gap: 0.4rem;
     background: rgba(0, 243, 255, 0.08);
-    border: 1.5px solid var(--neon-blue);
-    color: var(--neon-blue);
+    border: 1.5px solid var(--border-neon);
+    color: var(--border-neon);
     padding: 0.45rem 1.1rem;
     border-radius: 25px;
     font-size: 0.88rem;
     font-weight: 600;
-    box-shadow: 0 0 12px rgba(0, 243, 255, 0.2);
+    box-shadow: 0 0 12px rgba(0, 243, 255, 0.25);
     white-space: nowrap;
 }
 
@@ -285,24 +308,11 @@ header {
     gap: 1.5rem;
 }
 
-.skill-card {
-    background: var(--bg-card);
-    padding: 1.6rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--neon-blue);
-    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
-}
-
 .skill-card h3 {
     font-size: 1.2rem;
-    color: var(--neon-blue);
+    color: var(--border-neon);
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.2);
 }
 
 .skill-card p {
@@ -311,27 +321,18 @@ header {
 
 /* Featured Project Showcase */
 .featured-project-card {
-    background: var(--bg-card);
-    border-radius: 14px;
     overflow: hidden;
     margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.featured-project-card:hover {
-    border-color: var(--neon-blue);
-    box-shadow: 0 0 25px rgba(0, 243, 255, 0.18);
+    padding: 0;
 }
 
 .project-img-wrapper img {
     width: 100%;
     height: auto;
     display: block;
-    border-bottom: 2px solid var(--neon-blue);
+    border-bottom: 2px solid var(--border-neon);
 }
 
 .project-info {
@@ -383,15 +384,15 @@ header {
 .video-wrapper {
     max-width: 650px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1.5rem 1rem 0;
 }
 
 .video-wrapper video {
     width: 100%;
     max-height: 420px;
     border-radius: 12px;
-    border: 2px solid var(--neon-blue);
-    box-shadow: 0 0 20px var(--neon-blue-glow);
+    border: 2px solid var(--border-neon);
+    box-shadow: 0 0 20px var(--border-glow);
     display: block;
 }
 
@@ -400,22 +401,6 @@ header {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-}
-
-.experience-card {
-    background: var(--bg-card);
-    padding: 1.6rem 2rem;
-    border-radius: 12px;
-    border-left: 4px solid var(--neon-blue);
-    border-top: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.experience-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(0, 243, 255, 0.15);
 }
 
 .experience-card h3 {
@@ -438,10 +423,6 @@ header {
 }
 
 /* Certifications */
-.certifications-container {
-    margin-top: 2.5rem;
-}
-
 .certifications-container h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
@@ -537,10 +518,12 @@ header {
 footer {
     text-align: center;
     padding: 2rem;
-    background: #040810;
-    border-top: 1px solid var(--border-color);
+    background: #04070e;
+    border-top: 1px solid rgba(0, 243, 255, 0.2);
     color: var(--text-secondary);
     margin-top: 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 /* Responsive view for tablet/mobile */
